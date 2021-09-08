@@ -32,6 +32,10 @@
 //***************************************************************
 
 
+void configurarPWM(void);
+void configurarLedVerde(void);
+void configurarLedAmarilla(void);
+void configurarLedRoja(void);
 void configurarBinicio(void);
 void EMAADC(void);
 //***************************************************************
@@ -65,6 +69,10 @@ void setup()
   pinMode(binicio, INPUT_PULLUP); // Definir entrada del botón de inicio
 
   
+  configurarPWM(); // Llamar funciones para configurar servo y leds
+  configurarLedVerde();
+  configurarLedAmarilla();
+  configurarLedRoja();
   configurarBinicio();
   
 }
