@@ -57,6 +57,7 @@ void EMAADC(void);
 void semaforo(void);
 void separarTemperatura(void);
 void iniciardisplay(void);
+void configurarTimer(void);  
 
 
 //***************************************************************
@@ -78,6 +79,11 @@ int decenas = 0;
 int unidades = 0;
 int decimal = 0;
 int temperatura = 0;
+
+// Variables para instanciar el Timer
+hw_timer_t *timer = NULL;
+
+int contadorTimer = 0;        // Estado inicial contador del timer
 
 //***************************************************************
 // ISR
