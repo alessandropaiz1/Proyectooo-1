@@ -222,3 +222,37 @@ void semaforo(void)
     ledcWrite(3, 190); // Solamente se enciende led rojo
   }
 }
+//***************************************************************
+// Funcion para configurar display 7 segmentos
+//***************************************************************
+
+void configurarDisplay(uint8_t A, uint8_t B, uint8_t C, uint8_t D, uint8_t E, uint8_t F, uint8_t G, uint8_t dP)
+//uint8_t A, uint8_t B, uint8_t C, uint8_t D, uint8_t E, uint8_t F, uint8_t G, uint8_t dP
+{
+  pinA = A;            // Volver a definir los pines para utilizarlos en proximas configuraciones
+  pinB = B;
+  pinC = C;
+  pinD = D;
+  pinE = E;
+  pinF = F;
+  pinG = G;
+  pindP = dP;
+  
+  pinMode(A, OUTPUT);     // Definir las salidas de cada segmento
+  pinMode(B, OUTPUT);
+  pinMode(C, OUTPUT);
+  pinMode(D, OUTPUT);
+  pinMode(E, OUTPUT);
+  pinMode(F, OUTPUT);
+  pinMode(G, OUTPUT);
+  pinMode(dP, OUTPUT);
+
+  digitalWrite(A, LOW);    // Definir el estado inicial de cada segmento (cátodo)
+  digitalWrite(B, LOW);
+  digitalWrite(C, LOW);
+  digitalWrite(D, LOW);
+  digitalWrite(E, LOW);
+  digitalWrite(F, LOW);
+  digitalWrite(G, LOW);
+  digitalWrite(dP, LOW);
+}
