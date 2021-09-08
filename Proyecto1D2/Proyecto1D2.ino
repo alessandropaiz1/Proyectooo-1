@@ -31,7 +31,6 @@
 // Prototipos de funciones
 //***************************************************************
 
-
 void configurarPWM(void);
 void configurarLedVerde(void);
 void configurarLedAmarilla(void);
@@ -70,7 +69,6 @@ void setup()
 {
   pinMode(binicio, INPUT_PULLUP); // Definir entrada del botón de inicio
 
-  
   configurarPWM(); // Llamar funciones para configurar servo y leds
   configurarLedVerde();
   configurarLedAmarilla();
@@ -88,10 +86,8 @@ void loop()
   
     if (estadobinicio == 1)
     {
-      
       EMAADC();                   // Función filtro EMMA para obtener temperatura en celsius
       estadobinicio = 0;          // Reiniciar el estaod del botón
-      
 
     }
 
