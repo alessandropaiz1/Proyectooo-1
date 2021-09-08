@@ -182,6 +182,8 @@ void loop()
       semaforo();                 // Función para activar leds y motor servo
 
       separarTemperatura();       // Función para separar los valores de temperatura
+      io.run();                   // Conectarse como cliente al broker de Adafruit
+      TemperaturaFeed->save(celsius);   // Mandar el valor de temperatura a Adafruit.
     }
 
     iniciardisplay();             // Función para encender displays con delay integrado
