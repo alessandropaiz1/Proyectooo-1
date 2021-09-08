@@ -122,6 +122,7 @@ void setup()
   configurarBinicio();
   configurarDisplay(sA, sB, sC, sD, sE, sF, sG, sdP); // Llamar función para configurar display de 7 segmentos
   
+  configurarTimer();
 }
 
 //***************************************************************
@@ -380,3 +381,29 @@ void desplegarPunto(boolean punto)
     digitalWrite(pindP, LOW);
   }
 }
+//***************************************************************
+// Funcion para configurar Timer
+//***************************************************************
+void configurarTimer(void){
+  //Fosc = 80MHz 
+ // Fosc / Prescaler = 80Mhz/80 = 1,000,0000
+ // Tocs = 1/Fosc = 1 uSeg
+
+ //Paso 2: Seleccionar timer
+ //Timer 0, prescaler = 80, flanco de subida
+
+ timer = timerBegin(0, prescaler, true);
+ 
+ // Paso 3: Asignar el handler de la interrupcion
+ timerAttachInterrupt(timer, ISRTimer, true);
+
+ // Paso 4: Programar alarmas
+ // Tic = 1us
+ // Frecuencia = Se necesita 250 ms en uSeg
+
+ timerAlarmWrite(timer, 500 , true);
+ 
+ //Paso 5: Iniciar alarma 
+ timerAlarmEnable(timer);
+  
+  } 
