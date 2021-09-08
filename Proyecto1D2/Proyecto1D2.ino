@@ -122,6 +122,7 @@ void IRAM_ATTR ISRTimer(){     // Interrupción para el Timer
 
 void setup()
 {
+  Serial.begin(115200); // Definir comunicación Serial
 
   pinMode(ledV, OUTPUT); // Salidas leds del semaforo
   pinMode(ledA, OUTPUT);
