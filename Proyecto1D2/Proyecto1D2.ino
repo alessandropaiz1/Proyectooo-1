@@ -71,3 +71,13 @@ void setup()
 // Función para configurar PWM (LEDs y motor servo)
 //***************************************************************
 
+
+
+//***************************************************************
+// Función para configurar botón de inicio
+//***************************************************************
+void configurarBinicio(void)
+{
+
+  attachInterrupt(binicio, ISRbinicio, HIGH); // Configurar interrupción del botón inicio
+}
