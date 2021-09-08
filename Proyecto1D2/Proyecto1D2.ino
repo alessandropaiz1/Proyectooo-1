@@ -55,6 +55,7 @@ void desplegar7Seg(uint8_t digito);
 void desplegarPunto(boolean punto);
 void EMAADC(void);
 void semaforo(void);
+void separarTemperatura(void);
 
 
 //***************************************************************
@@ -72,6 +73,10 @@ int estadobinicio = 0;
 
 //Variables para display
 uint8_t pinA, pinB, pinC, pinD, pinE, pinF, pinG, pindP;
+int decenas = 0;
+int unidades = 0;
+int decimal = 0;
+int temperatura = 0;
 
 //***************************************************************
 // ISR
@@ -138,6 +143,7 @@ void loop()
       estadobinicio = 0;          // Reiniciar el estaod del botón
       semaforo();                 // Función para activar leds y motor servo
 
+      separarTemperatura();       // Función para separar los valores de temperatura
     }
 
 }
@@ -380,6 +386,16 @@ void desplegarPunto(boolean punto)
   {
     digitalWrite(pindP, LOW);
   }
+}
+
+//***************************************************************
+// Funcion para separar los dígitos de temperatura
+//***************************************************************
+void separarTemperatura(void)
+{
+  decenas = ((celsius)*(10))/(100);                       // Obtener solamente valor de la decena
+  unidades = ((celsius*10)-(decenas*100))/10;             // Obtener solamente valor de unidad 
+  decimal = ((celsius*10)-(decenas*100))-(unidades*10);   // Obtener solamente valor de decimal 
 }
 //***************************************************************
 // Funcion para configurar Timer
