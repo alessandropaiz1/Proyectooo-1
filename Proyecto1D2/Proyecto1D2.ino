@@ -88,7 +88,35 @@ void loop()
 // Función para configurar PWM (LEDs y motor servo)
 //***************************************************************
 
+void configurarPWM(void)
+{
+  // Paso 1: Configurar el modulo PWM
+  ledcSetup(0, 50, 8);
 
+  // Paso 2: Seleccionar en que GPIO tendremos nuestra senal PWM
+  ledcAttachPin(pinPWM, 0);
+}
+
+void configurarLedVerde(void)
+{
+
+  ledcSetup(1, 50, 8); // Configuración de led verde en canal 1
+  ledcAttachPin(ledV, 1);
+}
+
+void configurarLedAmarilla(void)
+{
+
+  ledcSetup(2, 50, 8); // Configuración de led amarilla en canal 2
+  ledcAttachPin(ledA, 2);
+}
+
+void configurarLedRoja(void)
+{
+
+  ledcSetup(3, 50, 8); // Configuración de led roja en canal 3
+  ledcAttachPin(ledR, 3);
+}
 
 //***************************************************************
 // Función para obtener y filtrar temperatura.
