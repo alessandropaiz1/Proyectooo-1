@@ -359,3 +359,17 @@ void desplegar7Seg(uint8_t digito)   // Configuración de los números en el dis
   }
 }
 
+//***************************************************************
+// Funcion para desplegar el punto del display
+//***************************************************************
+void desplegarPunto(boolean punto)     
+{
+  if (punto == 1)
+  {
+    digitalWrite(pindP, HIGH);
+  }
+  else
+  {
+    digitalWrite(pindP, LOW);
+  }
+}
