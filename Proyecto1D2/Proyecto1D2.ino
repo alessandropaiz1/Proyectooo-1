@@ -29,6 +29,8 @@ AdafruitIO_Feed *TemperaturaFeed = io.feed("sensor-de-temperatura");
 // Definición de pines
 //***************************************************************
 
+#define IO_USERNAME  "alessandropaiz"                    //Definir usuario y datos de Adafruit.io
+#define IO_KEY       "aio_nyaj418ftxFUYOsR6ZqpnzmKoXOU"
 
 #define pinLM35 35 // Definir pin del sensor LM35
 
