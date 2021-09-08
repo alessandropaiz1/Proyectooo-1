@@ -36,6 +36,15 @@
 // Variables globales
 //***************************************************************
 
+//Variables señal ADC
+int adcRaw = 0;
+double adcFiltrado = 0;
+double alpha = 0.05;
+float celsius = 0;
+
+//Variables Semáforo y Servo
+int estadobinicio = 0;
+
 //***************************************************************
 // ISR
 //***************************************************************
