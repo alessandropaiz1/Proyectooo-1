@@ -88,6 +88,7 @@ void loop()
     {
       EMAADC();                   // Función filtro EMMA para obtener temperatura en celsius
       estadobinicio = 0;          // Reiniciar el estaod del botón
+      semaforo();                 // Función para activar leds y motor servo
 
     }
 
@@ -142,8 +143,6 @@ void EMAADC(void)
   
 }
 
-
-
 //***************************************************************
 // Función para configurar botón de inicio
 //***************************************************************
@@ -151,4 +150,35 @@ void configurarBinicio(void)
 {
 
   attachInterrupt(binicio, ISRbinicio, HIGH); // Configurar interrupción del botón inicio
+}
+
+//***************************************************************
+// Función de semáforo de temperatura
+//***************************************************************
+
+void semaforo(void)
+{
+  if (celsius < 37)
+  {
+    ledcWrite(0, 5);   // Primera posicion del servo en 0 grados
+    ledcWrite(1, 190); // Solamente se enciende led verde
+    ledcWrite(2, 0);
+    ledcWrite(3, 0);
+  }
+
+  if (celsius >= 37 && celsius < 37.5)
+  {
+      ledcWrite(0, 15); // Primera posicion del servo en 0 grados
+      ledcWrite(1, 0);
+      ledcWrite(2, 190); // Solamente se enciende led amarilla
+      ledcWrite(3, 0);
+  }
+
+  if (celsius >= 37.5)
+  {
+    ledcWrite(0, 25); // Primera posicion del servo en 0 grados
+    ledcWrite(1, 0);
+    ledcWrite(2, 0);
+    ledcWrite(3, 190); // Solamente se enciende led rojo
+  }
 }
