@@ -60,6 +60,9 @@ void IRAM_ATTR ISRbinicio()    // Interrupción para botón de inicio
 
 void setup()
 {
+  pinMode(binicio, INPUT_PULLUP); // Definir entrada del botón de inicio
+
+  
   configurarBinicio();
   
 }
