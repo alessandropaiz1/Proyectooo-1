@@ -15,6 +15,18 @@
 // Definición de pines
 //***************************************************************
 
+
+#define pinLM35 35 // Definir pin del sensor LM35
+
+#define ledV 32 // Definir leds del semáforo de temperatura
+#define ledA 33
+#define ledR 27
+
+#define pinPWM 5 // Definir pin para señal PWM
+
+#define binicio 1 // Definir botón de inicio
+
+
 //***************************************************************
 // Prototipos de funciones
 //***************************************************************
