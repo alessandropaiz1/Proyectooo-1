@@ -68,7 +68,18 @@ void IRAM_ATTR ISRbinicio()    // Interrupción para botón de inicio
 
 void setup()
 {
+
+  pinMode(ledV, OUTPUT); // Salidas leds del semaforo
+  pinMode(ledA, OUTPUT);
+  pinMode(ledR, OUTPUT);
+
+  pinMode(pinPWM, OUTPUT); // Salida del motor servo
+
   pinMode(binicio, INPUT_PULLUP); // Definir entrada del botón de inicio
+
+  digitalWrite(ledV, 0); // Estado inicial leds del semaforo
+  digitalWrite(ledA, 0);
+  digitalWrite(ledR, 0);
 
   configurarPWM(); // Llamar funciones para configurar servo y leds
   configurarLedVerde();
