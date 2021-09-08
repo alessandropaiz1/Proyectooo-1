@@ -26,6 +26,19 @@
 
 #define binicio 1 // Definir botón de inicio
 
+#define sA 2    // Definir los pines para cada segmento del display
+#define sB 4
+#define sC 19
+#define sD 17
+#define sE 16
+#define sF 0
+#define sG 21
+#define sdP 18
+
+#define display1 14  // Definir los pines para cada display 
+#define display2 12
+#define display3 15
+
 
 //***************************************************************
 // Prototipos de funciones
