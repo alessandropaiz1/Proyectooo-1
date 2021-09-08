@@ -6,6 +6,20 @@
 // Carné: 19572
 //***************************************************************
 
+//***************************************************************
+// Conexión WIFI
+//***************************************************************
+#define IO_USERNAME  "alessandropaiz"
+#define IO_KEY       "aio_nyaj418ftxFUYOsR6ZqpnzmKoXOU"
+
+#define WIFI_SSID "FAMILIA_PAIZ"
+#define WIFI_PASS "WM21121996"
+
+#include "AdafruitIO_WiFi.h"
+
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);   // Definir IO con datos de WIFI
+
+AdafruitIO_Feed *TemperaturaFeed = io.feed("sensor-de-temperatura");
 
 //***************************************************************
 // Librerías
