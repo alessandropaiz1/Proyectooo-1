@@ -82,6 +82,12 @@ void IRAM_ATTR ISRbinicio()    // Interrupción para botón de inicio
   estadobinicio = 1;           // Iniciar cuando es 1
 }
 
+void IRAM_ATTR ISRTimer(){     // Interrupción para el Timer
+  contadorTimer++;
+  if(contadorTimer > 2){       // Reiniciar si es mayor a 2
+    contadorTimer = 0;
+  }
+}
 //***************************************************************
 // Configuración
 //***************************************************************
