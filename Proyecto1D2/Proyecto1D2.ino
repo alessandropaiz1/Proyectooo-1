@@ -39,6 +39,7 @@
 #define display2 12
 #define display3 15
 
+#define prescaler 80  // Prescaler para Timer
 
 //***************************************************************
 // Prototipos de funciones
