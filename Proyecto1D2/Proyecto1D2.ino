@@ -78,6 +78,7 @@ void loop()
     if (estadobinicio == 1)
     {
       
+      EMAADC();                   // Función filtro EMMA para obtener temperatura en celsius
       estadobinicio = 0;          // Reiniciar el estaod del botón
       
     }
