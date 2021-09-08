@@ -94,17 +94,26 @@ void setup()
 
   pinMode(pinPWM, OUTPUT); // Salida del motor servo
 
+  pinMode(display1, OUTPUT); //Salidas de los displays
+  pinMode(display2, OUTPUT);
+  pinMode(display3, OUTPUT);
+
   pinMode(binicio, INPUT_PULLUP); // Definir entrada del botón de inicio
 
   digitalWrite(ledV, 0); // Estado inicial leds del semaforo
   digitalWrite(ledA, 0);
   digitalWrite(ledR, 0);
 
+  digitalWrite(display1, 0); //Estado inicial de cada display
+  digitalWrite(display1, 0);
+  digitalWrite(display1, 0);
+
   configurarPWM(); // Llamar funciones para configurar servo y leds
   configurarLedVerde();
   configurarLedAmarilla();
   configurarLedRoja();
   configurarBinicio();
+  configurarDisplay(sA, sB, sC, sD, sE, sF, sG, sdP); // Llamar función para configurar display de 7 segmentos
   
 }
 
