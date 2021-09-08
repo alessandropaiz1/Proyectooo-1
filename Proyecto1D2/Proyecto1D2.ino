@@ -124,6 +124,20 @@ void setup()
 {
   Serial.begin(115200); // Definir comunicación Serial
 
+  while(! Serial);      // Esperar a que inicie comunicación
+
+  Serial.print("Conectando con Adafruit IO");
+
+  io.connect();        // Conectar con Adafruit
+
+  while(io.status() < AIO_CONNECTED) {   // Mientras está cargando...
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();           
+  Serial.println(io.statusText());       // Estado de conexión
+
   pinMode(ledV, OUTPUT); // Salidas leds del semaforo
   pinMode(ledA, OUTPUT);
   pinMode(ledR, OUTPUT);
