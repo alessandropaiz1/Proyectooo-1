@@ -37,6 +37,7 @@ void configurarLedAmarilla(void);
 void configurarLedRoja(void);
 void configurarBinicio(void);
 void EMAADC(void);
+void semaforo(void);
 
 
 //***************************************************************
