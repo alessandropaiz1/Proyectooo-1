@@ -67,6 +67,17 @@ void setup()
 // Loop principal
 //***************************************************************
 
+void loop()
+{
+  
+    if (estadobinicio == 1)
+    {
+      
+      estadobinicio = 0;          // Reiniciar el estaod del botón
+      
+    }
+
+}
 //***************************************************************
 // Función para configurar PWM (LEDs y motor servo)
 //***************************************************************
