@@ -38,6 +38,8 @@ void configurarLedAmarilla(void);
 void configurarLedRoja(void);
 void configurarBinicio(void);
 void EMAADC(void);
+
+
 //***************************************************************
 // Variables globales
 //***************************************************************
@@ -76,6 +78,7 @@ void setup()
   configurarBinicio();
   
 }
+
 //***************************************************************
 // Loop principal
 //***************************************************************
@@ -89,9 +92,11 @@ void loop()
       EMAADC();                   // Función filtro EMMA para obtener temperatura en celsius
       estadobinicio = 0;          // Reiniciar el estaod del botón
       
+
     }
 
 }
+
 //***************************************************************
 // Función para configurar PWM (LEDs y motor servo)
 //***************************************************************
