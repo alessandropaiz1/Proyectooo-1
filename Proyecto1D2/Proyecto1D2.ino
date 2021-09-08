@@ -56,6 +56,7 @@ void desplegarPunto(boolean punto);
 void EMAADC(void);
 void semaforo(void);
 void separarTemperatura(void);
+void iniciardisplay(void);
 
 
 //***************************************************************
@@ -146,6 +147,7 @@ void loop()
       separarTemperatura();       // Función para separar los valores de temperatura
     }
 
+    iniciardisplay();             // Función para encender displays con delay integrado
 }
 
 //***************************************************************
@@ -397,6 +399,37 @@ void separarTemperatura(void)
   unidades = ((celsius*10)-(decenas*100))/10;             // Obtener solamente valor de unidad 
   decimal = ((celsius*10)-(decenas*100))-(unidades*10);   // Obtener solamente valor de decimal 
 }
+//***************************************************************
+// Funcion para iniciar display
+//***************************************************************
+void iniciardisplay(void)
+{
+  if (contadorTimer == 0){        //Utilizar primer valor del timer para delay
+  digitalWrite(display1, HIGH);
+  digitalWrite(display2, LOW);
+  digitalWrite(display3, LOW);
+  desplegarPunto(LOW);
+  desplegar7Seg(decenas);
+  }
+
+  if (contadorTimer == 1){       // Segundo valor del timer para delay
+  digitalWrite(display1, LOW);
+  digitalWrite(display2, HIGH);
+  digitalWrite(display3, LOW);
+  desplegarPunto(HIGH);
+  desplegar7Seg(unidades);
+  }
+
+  if (contadorTimer == 2){      // Tercer valor del timer para delay y reiniciar a 0
+  digitalWrite(display1, LOW);
+  digitalWrite(display2, LOW);
+  digitalWrite(display3, HIGH);
+  desplegarPunto(LOW);
+  desplegar7Seg(decimal);
+  }
+  
+}
+
 //***************************************************************
 // Funcion para configurar Timer
 //***************************************************************
