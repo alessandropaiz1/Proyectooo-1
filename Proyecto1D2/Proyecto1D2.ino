@@ -90,6 +90,23 @@ void loop()
 
 
 //***************************************************************
+// Función para obtener y filtrar temperatura.
+//***************************************************************
+
+void EMAADC(void)
+{
+  adcRaw = analogReadMilliVolts(pinLM35);                        // Leer valores obtenidos por el LM35
+  adcFiltrado = (alpha * adcRaw) + ((1.0 - alpha) * adcFiltrado);  //Filtrar en un filtro EMMA los valores de temperatura obtenidos
+  celsius = (adcFiltrado / 10.0); 
+
+  Serial.println(celsius);                                        // Imprimir el valor de temperatura en celsius
+  delay(50);
+  
+}
+
+
+
+//***************************************************************
 // Función para configurar botón de inicio
 //***************************************************************
 void configurarBinicio(void)
