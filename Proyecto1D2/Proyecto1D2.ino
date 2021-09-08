@@ -66,6 +66,9 @@ float celsius = 0;
 //Variables Semáforo y Servo
 int estadobinicio = 0;
 
+//Variables para display
+uint8_t pinA, pinB, pinC, pinD, pinE, pinF, pinG, pindP;
+
 //***************************************************************
 // ISR
 //***************************************************************
